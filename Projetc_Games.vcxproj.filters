@@ -21,9 +21,15 @@
     <ClCompile Include="jogoadivin.c">
       <Filter>Arquivos de Recurso</Filter>
     </ClCompile>
+    <ClCompile Include="JogoForca.c">
+      <Filter>Arquivos de Recurso</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="jogoadivin.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="jogoForca.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
   </ItemGroup>

@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include "jogoadivin.h"
+#include "jogoForca.h"
 /*
     Código desenvolvido no curso:
     "C: conhecendo a Linguagem das Linguagens"
@@ -28,7 +29,7 @@ int main() {
             jogo_advinhacao();
             break;
         case 2:
-            //jogo_forca();
+            jogo_forca();
             break;
         case 3:
             //jogo_pacman();
