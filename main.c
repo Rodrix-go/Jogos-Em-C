@@ -26,7 +26,7 @@ int main() {
     switch(opc){
     
         case 1:
-            jogo_advinhacao();
+            jogoAdvinhacao();
             break;
         case 2:
             jogo_forca();

@@ -1,3 +1,3 @@
 #pragma once
 
-void jogo_advinhacao(void);
+void jogoAdvinhacao(void);
