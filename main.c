@@ -1,3 +1,5 @@
+#define _CRT_SECURE_NO_WARNINGS
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -17,11 +19,11 @@ int main() {
 
 
     printf("Você deseja jogar qual jogo: \n1 - Jogo da Adivinhação\n2 - Jogo da Forca\n3 - Pac-man\n");
-    int opc = 0;
+    int opc = 2; //Valor 0
 
-    printf("Insira sua resposta : ");
+    //printf("Insira sua resposta : ");
 
-    scanf_s("%d", &opc);
+    //scanf_s("%d", &opc);
 
     switch(opc){
     
