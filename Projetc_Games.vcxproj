@@ -130,12 +130,15 @@
     <ClCompile Include="jogoadivin.c" />
     <ClCompile Include="JogoForca.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="jogoPega.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="jogoadivin.h" />
     <ClInclude Include="jogoForca.h" />
+    <ClInclude Include="jogoPega.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="mapa.txt" />
     <Text Include="PalavrasSecretas.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

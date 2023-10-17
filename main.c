@@ -5,6 +5,8 @@
 #include <time.h>
 #include "jogoadivin.h"
 #include "jogoForca.h"
+#include "jogoPega.h"
+
 /*
     Código desenvolvido no curso:
     "C: conhecendo a Linguagem das Linguagens"
@@ -19,7 +21,7 @@ int main() {
 
 
     printf("Você deseja jogar qual jogo: \n1 - Jogo da Adivinhação\n2 - Jogo da Forca\n3 - Pac-man\n");
-    int opc = 2; //Valor 0
+    int opc = 3; //Valor 0
 
     //printf("Insira sua resposta : ");
 
@@ -34,7 +36,7 @@ int main() {
             jogo_forca();
             break;
         case 3:
-            //jogo_pacman();
+            jogoPega();
             break;
         default:
             printf("Você não selecionou nenhum jogo !!");

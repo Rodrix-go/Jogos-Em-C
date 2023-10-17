@@ -24,6 +24,9 @@
     <ClCompile Include="JogoForca.c">
       <Filter>Arquivos de Recurso</Filter>
     </ClCompile>
+    <ClCompile Include="jogoPega.c">
+      <Filter>Arquivos de Recurso</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="jogoadivin.h">
@@ -32,9 +35,15 @@
     <ClInclude Include="jogoForca.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
+    <ClInclude Include="jogoPega.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="PalavrasSecretas.txt">
+      <Filter>Arquivos de Recurso</Filter>
+    </Text>
+    <Text Include="mapa.txt">
       <Filter>Arquivos de Recurso</Filter>
     </Text>
   </ItemGroup>
