@@ -1,51 +1,43 @@
-#define _CRT_SECURE_NO_WARNINGS
-
+#include "Adivinha/jogoadivin.h"
+#include "Forca/jogoForca.h"
+#include "Pega-Pega/jogoPega.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "jogoadivin.h"
-#include "jogoForca.h"
-#include "jogoPega.h"
 
 /*
-    Código desenvolvido no curso:
+    Cï¿½digo desenvolvido no curso:
     "C: conhecendo a Linguagem das Linguagens"
     pela Alura...
 */
 
 int main() {
 
-    printf("===============================\n");
-    printf("Bem vindo ao jogo da Advinhação\n");
-    printf("===============================\n");
+  printf("==============================P=\n");
+  printf("Bem vindo ao jogo da AdvinhaÃ§Ã£o\n");
+  printf("===============================\n");
 
+  printf("Voce deseja jogar qual jogo: \n1 - Jogo da AdivinhaÃ§Ã£o\n2 - Jogo da "
+         "Forca\n3 - Pac-man\n");
+  int opc = 3; // Valor 0
 
-    printf("Você deseja jogar qual jogo: \n1 - Jogo da Adivinhação\n2 - Jogo da Forca\n3 - Pac-man\n");
-    int opc = 3; //Valor 0
+  printf("Insira sua resposta : ");
 
-    //printf("Insira sua resposta : ");
+  scanf("%d", &opc);
 
-    //scanf_s("%d", &opc);
+  switch (opc) {
 
-    switch(opc){
-    
-        case 1:
-            jogoAdvinhacao();
-            break;
-        case 2:
-            jogo_forca();
-            break;
-        case 3:
-            jogoPega();
-            break;
-        default:
-            printf("Você não selecionou nenhum jogo !!");
-            break;
-
-    }
-
-
-
-
-
+  case 1:
+    jogoAdvinhacao();
+    break;
+  case 2:
+    jogo_forca();
+    break;
+  case 3:
+    jogoPega();
+    break;
+  default:
+    printf("VocÃª nÃ£o selecionou nenhum jogo !!");
+    break;
+  }
 }
