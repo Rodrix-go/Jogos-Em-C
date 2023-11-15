@@ -3,8 +3,11 @@
         {
             "name": "Linux",
             "includePath": [
-                "${workspaceFolder}/**",
-                "$/home/rodrigo/Projetos/c/Jogos-em-C/**"
+                "${workspaceFolder}/Adivinha/**",
+                "${workspaceFolder}/Forca/**",
+                "${workspaceFolder}/Menu/**",
+                "/home/rodrigo/Projetos/c/Jogos-em-C/**",
+                "/usr/include/gtk-2.0/*"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/clang",

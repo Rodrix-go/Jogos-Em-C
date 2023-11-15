@@ -127,7 +127,7 @@ void desenhaforca() {
 void escolhepalavra() {
   FILE *f;
 
-  f = fopen("Adivinha/PalavrasSecretas.txt", "r");
+  f = fopen("PalavrasSecretas.txt", "r");
 
   if (f == 0) {
     printf("Banco de dados de palavras n�o dispon�vel\n\n");

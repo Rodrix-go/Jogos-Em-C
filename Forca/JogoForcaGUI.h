@@ -1,0 +1,1 @@
+int jogo_forca_gui(int argc, char *argv[]);
