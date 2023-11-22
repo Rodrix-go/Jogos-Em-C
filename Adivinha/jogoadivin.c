@@ -45,8 +45,57 @@ int adivinhacaoScreen01(int argc, char *argv[])
   return EXIT_SUCCESS;
 }
 
+int adivinhacaoScreen02(int argc, char *argv[])
+{
+  GtkWidget *adivinha_window02;
+  GtkWidget *adivinha_fixed2;
+
+  GtkWidget *adivinha_text_secret;
+  GtkWidget *adivinha_num_menor;
+  GtkWidget *adivinha_num_maior;
+  GtkWidget *adivinha_chances;
+  GtkWidget *adivinha_entry1;
+  GtkWidget *adivinha_text2;
+  GtkWidget *adivinha_text3;
+  GtkWidget *adivinha_text4;
+  GtkWidget *adivinha_text5;
+  GtkWidget *adivinha_text6;
+  GtkWidget *adivinha_text7;
+
+  GtkBuilder *adivinha_builder;
+
+  gtk_init(&argc, &argv); // init Gtk
+
+  adivinha_builder = gtk_builder_new_from_file("Adivinha/AdivinhaTela02.glade");
+
+  adivinha_window02 = GTK_WIDGET(gtk_builder_get_object(adivinha_builder, "adivinha_window02"));
+
+  g_signal_connect(adivinha_window02, "destroy", G_CALLBACK(gtk_main_quit), NULL);
+
+  gtk_builder_connect_signals(adivinha_builder, NULL);
+
+  adivinha_text_secret = GTK_WIDGET(gtk_builder_get_object(adivinha_builder, "adivinha_num_menor"));
+  adivinha_num_maior = GTK_WIDGET(gtk_builder_get_object(adivinha_builder, "adivinha_num_maior"));
+  adivinha_chances = GTK_WIDGET(gtk_builder_get_object(adivinha_builder, "adivinha_chances"));
+  adivinha_entry1 = GTK_WIDGET(gtk_builder_get_object(adivinha_builder, "adivinha_entry1"));
+  adivinha_text2 = GTK_WIDGET(gtk_builder_get_object(adivinha_builder, "adivinha_text2"));
+  adivinha_text3 = GTK_WIDGET(gtk_builder_get_object(adivinha_builder, "adivinha_text3"));
+  adivinha_text4 = GTK_WIDGET(gtk_builder_get_object(adivinha_builder, "adivinha_text4"));
+  adivinha_text5 = GTK_WIDGET(gtk_builder_get_object(adivinha_builder, "adivinha_text5"));
+  adivinha_text6 = GTK_WIDGET(gtk_builder_get_object(adivinha_builder, "adivinha_text6"));
+  adivinha_text7 = GTK_WIDGET(gtk_builder_get_object(adivinha_builder, "adivinha_text7"));
+
+  gtk_widget_show(adivinha_window02);
+
+  gtk_main();
+  gtk_widget_destroy(adivinha_window02);
+
+  return EXIT_SUCCESS;
+}
+
 void on_button_easy_clicked(GtkButton *b)
 {
+  adivinhacaoScreen02(0, 0);
   gtk_widget_destroy(adivinha_window01);
 }
 
