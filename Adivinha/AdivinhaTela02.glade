@@ -14,10 +14,11 @@
             <property name="height-request">80</property>
             <property name="visible">True</property>
             <property name="can-focus">True</property>
+            <signal name="activate" handler="on_adivinha_entry1_activate" swapped="no"/>
           </object>
           <packing>
-            <property name="x">404</property>
-            <property name="y">151</property>
+            <property name="x">389</property>
+            <property name="y">80</property>
           </packing>
         </child>
         <child>
@@ -32,8 +33,8 @@
             </attributes>
           </object>
           <packing>
-            <property name="x">351</property>
-            <property name="y">86</property>
+            <property name="x">316</property>
+            <property name="y">4</property>
           </packing>
         </child>
         <child>
@@ -74,7 +75,6 @@
             <property name="height-request">80</property>
             <property name="visible">True</property>
             <property name="can-focus">False</property>
-            <property name="label" translatable="yes">10 - 20 - 30 - 40 - 50 - 60</property>
           </object>
           <packing>
             <property name="x">79</property>
@@ -119,7 +119,6 @@
             <property name="height-request">80</property>
             <property name="visible">True</property>
             <property name="can-focus">False</property>
-            <property name="label" translatable="yes">90 - 40 - 40 - 50</property>
           </object>
           <packing>
             <property name="x">373</property>
@@ -172,6 +171,22 @@
           <packing>
             <property name="x">540</property>
             <property name="y">230</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="adivinha_text8">
+            <property name="width-request">248</property>
+            <property name="height-request">26</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Digite um número válido !!</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans Bold 14"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">336</property>
+            <property name="y">165</property>
           </packing>
         </child>
       </object>
