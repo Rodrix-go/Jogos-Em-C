@@ -16,6 +16,13 @@ char num_maiores[100] = "";
 char num_menores[100] = "";
 int numero_tentativas;
 int numerosecreto;
+int tentativas;
+
+int resultado = 0;
+/*
+1 - Ganhou
+2 - Perdeu
+*/
 GtkWidget *adivinha_window01;
 int adivinhacaoScreen01(int argc, char *argv[])
 {
@@ -52,23 +59,20 @@ int adivinhacaoScreen01(int argc, char *argv[])
 
 void on_button_easy_clicked(GtkButton *b)
 {
-  adivinhacaoScreen02(0, 0, 20);
-  // Params 20
-
   gtk_widget_destroy(adivinha_window01);
+  adivinhacaoScreen02(0, 0, 20);
 }
 
 void on_button_medium_clicked(GtkButton *b, gpointer user_data)
 {
-  // Params 15
   gtk_widget_destroy(adivinha_window01);
+  adivinhacaoScreen02(0, 0, 15);
 }
 
 void on_button_hard_clicked(GtkButton *b, gpointer user_data)
 {
-  // Destruir a janela principal
-  // Params 6
   gtk_widget_destroy(adivinha_window01);
+  adivinhacaoScreen02(0, 0, 6);
 }
 
 GtkWidget *adivinha_text8;
@@ -78,9 +82,9 @@ GtkWidget *adivinha_chances;
 GtkWidget *adivinha_text_secret;
 GtkWidget *adivinha_entry1;
 
+GtkWidget *adivinha_window02;
 int adivinhacaoScreen02(int argc, char *argv[], int chances)
 {
-  GtkWidget *adivinha_window02;
   GtkWidget *adivinha_fixed2;
 
   GtkWidget *adivinha_text2;
@@ -127,10 +131,16 @@ int adivinhacaoScreen02(int argc, char *argv[], int chances)
   gtk_label_set_text(GTK_LABEL(adivinha_chances), (const gchar *)texto_chances);
   numero_tentativas = chances;
 
+  // Esconde Texto de mensagem Inválida"`
+  gtk_widget_set_visible(GTK_WIDGET(adivinha_text8), 0);
+
   gtk_widget_show(adivinha_window02);
 
   gtk_main();
   gtk_widget_destroy(adivinha_window02);
+
+  //  double pontosperdidos = abs(chute - numerosecreto) / (double)2.0;
+  //  pontos = pontos - pontosperdidos;
 
   return EXIT_SUCCESS;
 }
@@ -143,7 +153,7 @@ void on_adivinha_entry1_activate(GtkEntry *entry)
   num = converter_str_to_int(texto);
 
   // Erro de conversão ou valor negativo
-  if ((num >= 0) || (numero_tentativas > 0))
+  if (num >= 0)
   {
     gtk_widget_set_visible(GTK_WIDGET(adivinha_text8), 0);
     g_print("Texto inserido correto: %s\n", texto);
@@ -154,6 +164,9 @@ void on_adivinha_entry1_activate(GtkEntry *entry)
       char texto_chances[10];
       sprintf(texto_chances, "%d", num);
       gtk_label_set_text(GTK_LABEL(adivinha_text_secret), (const gchar *)texto_chances);
+      gtk_entry_set_text(GTK_ENTRY(entry), "");
+      resultado = 1;
+      adivinhacaoScreen03(0, 0);
     }
     else if (num > numerosecreto)
     {
@@ -177,8 +190,8 @@ void on_adivinha_entry1_activate(GtkEntry *entry)
     }
 
     char texto_chances[10];
-    numero_tentativas--;
-    sprintf(texto_chances, "%d", numero_tentativas);
+    tentativas++;
+    sprintf(texto_chances, "%d", numero_tentativas - tentativas);
     gtk_label_set_text(GTK_LABEL(adivinha_chances), (const gchar *)texto_chances);
   }
   else
@@ -187,75 +200,6 @@ void on_adivinha_entry1_activate(GtkEntry *entry)
     g_print("Texto inserido errado: %s\n", texto);
   }
   gtk_entry_set_text(GTK_ENTRY(entry), "");
-}
-
-void jogoAdvinhacao(int argc, char *argv[], int nivel)
-{
-  // Declaração de váriaveis
-
-  int chute;
-  int tentativas = 1;
-  double pontos = 1000;
-  int acertou = 0;
-
-  // Seleção da dificuldade
-  printf("Qual o n�vel de dificuldade?\n");
-  printf("(1) Fácil (2) Médio (3) Difícil\n\n");
-  printf("Escolha: ");
-  scanf("%d", &nivel);
-
-  // Algoritimo de tentativas
-  int numerodetentativas = 10;
-  for (int i = 1; i <= numerodetentativas; i++)
-  {
-    printf("Tentativa %d\n", tentativas);
-    printf("Qual o o seu número? ");
-
-    scanf("%d", &chute);
-    printf("Seu chute foi: %d\n", chute);
-
-    if (chute < 0)
-    {
-      printf("Você não pode chutar números negativos!\n");
-      continue;
-    }
-    int numerosecreto = 10;
-    acertou = (chute == numerosecreto);
-    int maior = chute > numerosecreto;
-
-    if (acertou)
-    {
-      break;
-    }
-    else if (maior)
-    {
-      printf("Seu chute foi maior que o número secreto\n");
-    }
-    else
-    {
-      printf("Seu chute foi menor que o número secreto\n");
-    }
-
-    tentativas++;
-
-    double pontosperdidos = abs(chute - numerosecreto) / (double)2.0;
-    pontos = pontos - pontosperdidos;
-  }
-
-  // Conferir resultado
-  printf("Fim de jogo!\n");
-
-  if (acertou)
-  {
-    printf("Você ganhou!\n");
-    printf("Você acertou em %d tentativas!\n", tentativas);
-    printf("Total de pontos: %.1f\n", pontos);
-  }
-
-  else
-  {
-    printf("Você perdeu! Tente de novo!\n");
-  }
 }
 
 int converter_str_to_int(const char *string)
@@ -272,13 +216,79 @@ int converter_str_to_int(const char *string)
   return numero;
 }
 
-void add_to_num_maior(int num)
+GtkWidget *adivinha_window03;
+int adivinhacaoScreen03(int argc, char *argv[])
 {
-  char texto_chances[3];
-  sprintf(texto_chances, "- %d", num);
+  GtkWidget *adivinha_fixed3;
+  GtkWidget *adivinha_fixed4;
+  GtkWidget *adivinha_button_yes;
+  GtkWidget *adivinha_button_no;
+  GtkWidget *adivinha_text_end;
+  GtkWidget *adivinha_text9;
+  GtkBuilder *adivinha_builder;
 
-  strcat(num_maiores, texto_chances);
-  printf("%s\n", num_maiores);
+  gtk_init(&argc, &argv); // init Gtk
 
-  gtk_label_set_text(GTK_LABEL(adivinha_num_maior), (const gchar *)num_maiores);
+  adivinha_builder = gtk_builder_new_from_file("Adivinha/AdivinhaTela03.glade");
+
+  adivinha_window03 = GTK_WIDGET(gtk_builder_get_object(adivinha_builder, "adivinha_window03"));
+
+  g_signal_connect(adivinha_window03, "destroy", G_CALLBACK(gtk_main_quit), NULL);
+
+  gtk_builder_connect_signals(adivinha_builder, NULL);
+
+  adivinha_fixed3 = GTK_WIDGET(gtk_builder_get_object(adivinha_builder, "adivinha_fixed4"));
+  adivinha_fixed4 = GTK_WIDGET(gtk_builder_get_object(adivinha_builder, "adivinha_fixed3"));
+  adivinha_button_yes = GTK_WIDGET(gtk_builder_get_object(adivinha_builder, "adivinha_button_yes"));
+  adivinha_button_no = GTK_WIDGET(gtk_builder_get_object(adivinha_builder, "adivinha_button_no"));
+  adivinha_text_end = GTK_WIDGET(gtk_builder_get_object(adivinha_builder, "adivinha_text_end"));
+  adivinha_text9 = GTK_WIDGET(gtk_builder_get_object(adivinha_builder, "adivinha_text9"));
+  gtk_widget_show(adivinha_window03);
+
+  char texto_edit[10];
+  if (resultado == 1)
+  {
+    sprintf(texto_edit, "Parabéns você ganhou !!\nO número secreto era: %d", numerosecreto);
+  }
+  else
+  {
+    sprintf(texto_edit, "Não foi dessa vez !!\nO número secreto era: %d", numerosecreto);
+  }
+
+  gtk_label_set_text(GTK_LABEL(adivinha_text_end), (const gchar *)texto_edit);
+
+  gtk_main();
+  gtk_widget_destroy(adivinha_window03);
+
+  return EXIT_SUCCESS;
+}
+
+void on_adivinha_button_yes_clicked(GtkButton *b, gpointer user_data)
+{
+  sprintf(num_maiores, "");
+  sprintf(num_menores, "");
+  gtk_label_set_text(GTK_LABEL(adivinha_num_menor), (const gchar *)num_maiores);
+  gtk_label_set_text(GTK_LABEL(adivinha_num_maior), (const gchar *)num_menores);
+
+  int segundos = time(0);
+  srand(segundos);
+  int numerogrande = rand();
+  numerosecreto = numerogrande % 100;
+  printf("O número secreto é: %d\n", numerosecreto);
+  gtk_label_set_text(GTK_LABEL(adivinha_text_secret), (const gchar *)"??");
+
+  char texto_chances[10];
+  tentativas = 0;
+  sprintf(texto_chances, "%d", numero_tentativas - tentativas);
+  gtk_label_set_text(GTK_LABEL(adivinha_chances), (const gchar *)texto_chances);
+
+  gtk_widget_destroy(adivinha_window02);
+  gtk_widget_destroy(adivinha_window03);
+  adivinhacaoScreen02(0, 0, 20);
+}
+
+void on_adivinha_button_no_clicked(GtkButton *b, gpointer user_data)
+{
+  gtk_widget_destroy(adivinha_window02);
+  gtk_widget_destroy(adivinha_window03);
 }
