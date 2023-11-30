@@ -2,10 +2,10 @@
 <!-- Generated with glade 3.40.0 -->
 <interface>
   <requires lib="gtk+" version="3.24"/>
-  <template class="window" parent="GtkWindow">
+  <object class="GtkWindow" id="forca_window01">
     <property name="can-focus">False</property>
     <child>
-      <object class="GtkFixed">
+      <object class="GtkFixed" id="forca_fixed01">
         <property name="visible">True</property>
         <property name="can-focus">False</property>
         <child>
@@ -24,7 +24,7 @@
           </packing>
         </child>
         <child>
-          <object class="GtkImage" id="image1">
+          <object class="GtkImage" id="forca_image01">
             <property name="width-request">200</property>
             <property name="height-request">200</property>
             <property name="visible">True</property>
@@ -33,17 +33,17 @@
             <property name="valign">center</property>
             <property name="hexpand">True</property>
             <property name="vexpand">True</property>
-            <property name="pixbuf">../Forca/img/1.gif</property>
+            <property name="pixbuf">img/1.gif</property>
             <property name="pixel-size">174</property>
             <property name="icon_size">1</property>
           </object>
           <packing>
-            <property name="x">310</property>
-            <property name="y">141</property>
+            <property name="x">220</property>
+            <property name="y">150</property>
           </packing>
         </child>
         <child>
-          <object class="GtkLabel">
+          <object class="GtkLabel" id="forca_text_theme">
             <property name="name">text1</property>
             <property name="width-request">246</property>
             <property name="height-request">108</property>
@@ -448,5 +448,5 @@
         </child>
       </object>
     </child>
-  </template>
+  </object>
 </interface>

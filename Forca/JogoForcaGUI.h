@@ -1,1 +1,1 @@
-int jogo_forca_gui(int argc, char *argv[]);
+int forcaWindow01(int argc, char *argv[]);

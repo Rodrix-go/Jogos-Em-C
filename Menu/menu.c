@@ -12,6 +12,7 @@
 #include "../Adivinha/jogoadivin.h"
 #include "../Forca/jogoForca.h"
 #include "../Pega-Pega/jogoPega.h"
+#include "../Forca/JogoForcaGUI.h"
 
 /*
     Código desenvolvido no curso
@@ -63,7 +64,8 @@ void on_button_adivin_clicked(GtkButton *b, gpointer user_data)
 
 void on_button_forca_clicked(GtkButton *b, gpointer user_data)
 {
-  jogo_forca();
+  gtk_widget_destroy(window);
+  forcaWindow01(0, 0);
 }
 
 void on_button_pega_clicked(GtkButton *b)

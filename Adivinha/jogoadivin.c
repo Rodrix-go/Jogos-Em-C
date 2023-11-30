@@ -57,19 +57,19 @@ int adivinhacaoScreen01(int argc, char *argv[])
   return EXIT_SUCCESS;
 }
 
+void on_button_medium_clicked(GtkButton *b)
+{
+  gtk_widget_destroy(adivinha_window01);
+  adivinhacaoScreen02(0, 0, 15);
+}
+
 void on_button_easy_clicked(GtkButton *b)
 {
   gtk_widget_destroy(adivinha_window01);
   adivinhacaoScreen02(0, 0, 20);
 }
 
-void on_button_medium_clicked(GtkButton *b, gpointer user_data)
-{
-  gtk_widget_destroy(adivinha_window01);
-  adivinhacaoScreen02(0, 0, 15);
-}
-
-void on_button_hard_clicked(GtkButton *b, gpointer user_data)
+void on_button_hard_clicked(GtkButton *b)
 {
   gtk_widget_destroy(adivinha_window01);
   adivinhacaoScreen02(0, 0, 6);
