@@ -66,6 +66,7 @@ void on_button_forca_clicked(GtkButton *b, gpointer user_data)
 {
   gtk_widget_destroy(window);
   forcaWindow01(0, 0);
+  // jogo_forca();
 }
 
 void on_button_pega_clicked(GtkButton *b)

@@ -430,7 +430,7 @@
           </packing>
         </child>
         <child>
-          <object class="GtkLabel" id="forca_text_string">
+          <object class="GtkLabel" id="forca_text_stringG">
             <property name="width-request">114</property>
             <property name="height-request">120</property>
             <property name="visible">True</property>
@@ -443,7 +443,7 @@
             </attributes>
           </object>
           <packing>
-            <property name="x">558</property>
+            <property name="x">540</property>
             <property name="y">156</property>
           </packing>
         </child>

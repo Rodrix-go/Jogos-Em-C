@@ -430,19 +430,20 @@
           </packing>
         </child>
         <child>
-          <object class="GtkLabel" id="palavra">
-            <property name="width-request">100</property>
-            <property name="height-request">80</property>
+          <object class="GtkLabel" id="forca_text_string">
+            <property name="width-request">114</property>
+            <property name="height-request">120</property>
             <property name="visible">True</property>
             <property name="can-focus">False</property>
-            <property name="label" translatable="yes">_ _ _ _ _ _ _ _ _ _ </property>
+            <property name="label" translatable="yes">_ _ _ _ _ _ _ </property>
+            <property name="width-chars">70</property>
             <attributes>
               <attribute name="font-desc" value="Sans Bold 72"/>
               <attribute name="foreground" value="#000000000000"/>
             </attributes>
           </object>
           <packing>
-            <property name="x">560</property>
+            <property name="x">540</property>
             <property name="y">156</property>
           </packing>
         </child>
