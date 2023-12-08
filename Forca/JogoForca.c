@@ -5,7 +5,6 @@
 #include <time.h>
 
 #define TAMANHO_PALAVRA 20
-#define QNTD_DE_ERROS 5
 char tema[10];
 char palavrasecreta[TAMANHO_PALAVRA];
 char chutes[26];
@@ -86,14 +85,11 @@ void abertura()
   printf("/****************/\n\n");
 }
 
-void chuta()
+void chuta(char letra)
 {
-  char chute;
-  printf("Qual letra? ");
-  scanf(" %c", &chute);
-
-  chutes[chutesdados] = chute;
+  chutes[chutesdados] = letra;
   chutesdados++;
+  g_print("Letra inserida: %c\n", letra);
 }
 
 int chuteserrados()
@@ -110,41 +106,6 @@ int chuteserrados()
   }
 
   return erros;
-}
-
-void desenhaforca()
-{
-
-  int erros = chuteserrados();
-
-  printf("  _______       \n");
-  printf(" |/      |      \n");
-  printf(" |      %c%c%c  \n", (erros >= 1 ? '(' : ' '),
-         (erros >= 1 ? '_' : ' '), (erros >= 1 ? ')' : ' '));
-  printf(" |      %c%c%c  \n", (erros >= 3 ? '\\' : ' '),
-         (erros >= 2 ? '|' : ' '), (erros >= 3 ? '/' : ' '));
-  printf(" |       %c     \n", (erros >= 2 ? '|' : ' '));
-  printf(" |      %c %c   \n", (erros >= 4 ? '/' : ' '),
-         (erros >= 4 ? '\\' : ' '));
-  printf(" |              \n");
-  printf("_|___           \n");
-  printf("\n\n");
-
-  // printf("Você já deu %d chutes\n", chutesdados);
-
-  for (int i = 0; i < strlen(palavrasecreta); i++)
-  {
-
-    if (jachutou(palavrasecreta[i]))
-    {
-      printf("%c ", palavrasecreta[i]);
-    }
-    else
-    {
-      printf("_ ");
-    }
-  }
-  printf("\n");
 }
 
 void escolhetema()
@@ -168,7 +129,7 @@ void escolhetema()
   {
     fscanf(f, "%s", tema);
   }
-  printf("%s", tema);
+  printf("Tema escolhido: %s\n", tema);
   fclose(f);
 }
 
@@ -197,6 +158,7 @@ void escolhepalavra()
     fscanf(f, "%s", palavrasecreta);
   }
   fclose(f);
+  g_print("Palavra correta: %s\n", palavrasecreta);
 }
 
 void adcionapalavra()
@@ -241,7 +203,7 @@ void jogo_forca()
   {
 
     desenhaforca();
-    chuta();
+    chuta('A');
 
   } while (!ganhou() && !enforcou());
 

@@ -8,6 +8,7 @@
         "gtkaccelgroup.h": "c",
         "gtkenums.h": "c",
         "jogoadivin.h": "c",
-        "time.h": "c"
+        "time.h": "c",
+        "stdio.h": "c"
     }
 }
