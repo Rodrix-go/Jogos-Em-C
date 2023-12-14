@@ -1,6 +1,11 @@
+#define CIMA 'w'
+#define BAIXO 's'
+#define DIREITA 'd'
+#define ESQUERDA 'a'
 
-void jogoPega(void);
+void jogoPega();
+int acabou();
+void move(char direcao);
 
-void alocamapa();
-void lemapa();
-void liberamapa();
+int ehdirecao(char direcao);
+void fantasmas();

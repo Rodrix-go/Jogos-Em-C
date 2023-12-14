@@ -26,6 +26,7 @@ GtkWidget *fixed1;
 GtkWidget *button_advin;
 GtkWidget *button_forca;
 GtkWidget *button_pega;
+GtkWidget *button;
 GtkWidget *text1;
 GtkBuilder *builder;
 
@@ -44,9 +45,20 @@ int main(int argc, char *argv[])
 
   fixed1 = GTK_WIDGET(gtk_builder_get_object(builder, "fixed1"));
   button_advin = GTK_WIDGET(gtk_builder_get_object(builder, "button_advin"));
+  button = GTK_WIDGET(gtk_builder_get_object(builder, "button"));
   button_forca = GTK_WIDGET(gtk_builder_get_object(builder, "button_forca"));
   button_pega = GTK_WIDGET(gtk_builder_get_object(builder, "button_pega"));
   text1 = GTK_WIDGET(gtk_builder_get_object(builder, "text1"));
+
+  // Obtém o estilo do botão
+  GtkStyleContext *context = gtk_widget_get_style_context(button);
+
+  // Carrega o arquivo CSS
+  GtkCssProvider *cssProvider = gtk_css_provider_new();
+  gtk_css_provider_load_from_path(cssProvider, "Menu/estilo.css", NULL);
+
+  // Adiciona o provedor de estilo ao contexto do botão
+  gtk_style_context_add_provider(context, GTK_STYLE_PROVIDER(cssProvider), GTK_STYLE_PROVIDER_PRIORITY_USER);
 
   gtk_widget_show(window);
 

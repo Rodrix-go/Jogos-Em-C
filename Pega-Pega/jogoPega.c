@@ -1,54 +1,132 @@
-#include "jogoPega.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include "time.h"
+#include "jogoPega.h"
+#include "mapa.h"
 
-char **mapa;
-int linhas;
-int colunas;
+MAPA m;
+POSICAO heroi;
 
-void lemapa(void) {
-  FILE *f;
-  f = fopen("Pega-Pega/mapa.txt", "r");
-  if (f == 0) {
-    printf("Erro na leitura do mapa");
-    exit(1);
-  }
-
-  fscanf(f, "%d %d", &linhas, &colunas);
-
-  alocamapa();
-
-  for (int i = 0; i < 5; i++) {
-    fscanf(f, "%s", mapa[i]);
-  }
-
-  fclose(f);
+int acabou()
+{
+	POSICAO pos;
+	int fogefogenomapa = encontramapa(&m, &pos, HEROI);
+	return !fogefogenomapa;
 }
 
-void alocamapa(void) {
-
-  mapa = malloc(sizeof(char *) * linhas);
-
-  for (int i = 0; i < linhas; i++) {
-    mapa[i] = malloc(sizeof(char) * colunas + 1);
-  }
+int ehdirecao(char direcao)
+{
+	return direcao == ESQUERDA ||
+		   direcao == CIMA ||
+		   direcao == BAIXO ||
+		   direcao == DIREITA;
 }
 
-void liberamapa() {
-  for (int i = 0; i < linhas; i++) {
-    free(mapa[i]);
-  }
+void move(char direcao)
+{
 
-  free(mapa);
+	if (!ehdirecao(direcao))
+		return;
+
+	int proximox = heroi.x;
+	int proximoy = heroi.y;
+
+	switch (direcao)
+	{
+	case ESQUERDA:
+		proximoy--;
+		break;
+	case CIMA:
+		proximox--;
+		break;
+	case BAIXO:
+		proximox++;
+		break;
+	case DIREITA:
+		proximoy++;
+		break;
+	}
+
+	if (!podeandar(&m, proximox, proximoy))
+		return;
+
+	andanomapa(&m, heroi.x, heroi.y, proximox, proximoy);
+	heroi.x = proximox;
+	heroi.y = proximoy;
 }
 
-void jogoPega(void) {
+int praondefantasmavai(int xatual, int yatual,
+					   int *xdestino, int *ydestino)
+{
 
-  lemapa();
+	int opcoes[4][2] = {
+		{xatual, yatual + 1},
+		{xatual + 1, yatual},
+		{xatual, yatual - 1},
+		{xatual - 1, yatual}};
 
-  for (int i = 0; i < linhas; i++) {
-    printf("%s\n", mapa[i]);
-  }
+	srand(time(0));
+	for (int i = 0; i < 10; i++)
+	{
+		int posicao = rand() % 4;
 
-  liberamapa();
+		if (podeandar(&m, opcoes[posicao][0], opcoes[posicao][1]))
+		{
+			*xdestino = opcoes[posicao][0];
+			*ydestino = opcoes[posicao][1];
+			return 1;
+		}
+	}
+
+	return 0;
+}
+
+void fantasmas()
+{
+	MAPA copia;
+
+	copiamapa(&copia, &m);
+
+	for (int i = 0; i < copia.linhas; i++)
+	{
+		for (int j = 0; j < copia.colunas; j++)
+		{
+			if (copia.matriz[i][j] == FANTASMA)
+			{
+
+				int xdestino;
+				int ydestino;
+
+				int encontrou = praondefantasmavai(i, j, &xdestino, &ydestino);
+
+				if (encontrou)
+				{
+					andanomapa(&m, i, j, xdestino, ydestino);
+				}
+			}
+		}
+	}
+
+	liberamapa(&copia);
+}
+
+void jogoPega()
+{
+
+	lemapa(&m);
+	encontramapa(&m, &heroi, HEROI);
+
+	do
+	{
+		imprimemapa(&m);
+
+		char comando;
+		scanf(" %c", &comando);
+
+		move(comando);
+		fantasmas();
+
+	} while (!acabou());
+	imprimemapa(&m);
+	liberamapa(&m);
 }
