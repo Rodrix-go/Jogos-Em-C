@@ -11,7 +11,7 @@
 #include <ctype.h>
 #include "../Adivinha/jogoadivin.h"
 #include "../Forca/jogoForca.h"
-#include "../Pega-Pega/jogoPega.h"
+#include "../Foge/fogefoge.h"
 #include "../Forca/JogoForcaGUI.h"
 
 /*
@@ -83,5 +83,5 @@ void on_button_forca_clicked(GtkButton *b, gpointer user_data)
 
 void on_button_pega_clicked(GtkButton *b)
 {
-  jogoPega();
+  jogo_foge();
 }

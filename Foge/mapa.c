@@ -6,7 +6,7 @@
 void lemapa(MAPA *m)
 {
 	FILE *f;
-	f = fopen("Pega-Pega/mapa.txt", "r");
+	f = fopen("Foge/mapa.txt", "r");
 	if (f == 0)
 	{
 		printf("Erro na leitura do mapa");
@@ -55,14 +55,6 @@ void liberamapa(MAPA *m)
 	free(m->matriz);
 }
 
-void imprimemapa(MAPA *m)
-{
-	for (int i = 0; i < m->linhas; i++)
-	{
-		printf("%s\n", m->matriz[i]);
-	}
-}
-
 int encontramapa(MAPA *m, POSICAO *p, char c)
 {
 
@@ -78,13 +70,15 @@ int encontramapa(MAPA *m, POSICAO *p, char c)
 			}
 		}
 	}
+
 	return 0;
 }
 
-int podeandar(MAPA *m, int x, int y)
+int podeandar(MAPA *m, char personagem, int x, int y)
 {
 	return ehvalida(m, x, y) &&
-		   ehvazia(m, x, y);
+		   !ehparede(m, x, y) &&
+		   !ehpersonagem(m, personagem, x, y);
 }
 
 int ehvalida(MAPA *m, int x, int y)
@@ -97,9 +91,15 @@ int ehvalida(MAPA *m, int x, int y)
 	return 1;
 }
 
-int ehvazia(MAPA *m, int x, int y)
+int ehpersonagem(MAPA *m, char personagem, int x, int y)
 {
-	return m->matriz[x][y] == VAZIO || m->matriz[x][y] == HEROI;
+	return m->matriz[x][y] == personagem;
+}
+
+int ehparede(MAPA *m, int x, int y)
+{
+	return m->matriz[x][y] == PAREDE_VERTICAL ||
+		   m->matriz[x][y] == PAREDE_HORIZONTAL;
 }
 
 void andanomapa(MAPA *m, int xorigem, int yorigem,
