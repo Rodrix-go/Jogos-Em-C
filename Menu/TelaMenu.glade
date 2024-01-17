@@ -53,7 +53,7 @@
         </child>
         <child>
           <object class="GtkButton" id="button_pega">
-            <property name="label" translatable="yes">Pega-Pega</property>
+            <property name="label" translatable="yes">Foge-Foge</property>
             <property name="width-request">120</property>
             <property name="height-request">80</property>
             <property name="visible">True</property>

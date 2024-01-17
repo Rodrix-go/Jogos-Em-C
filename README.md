@@ -28,7 +28,7 @@ Para executar a aplicação, execute as linhas de código no seu terminal:
 
 Certifique-se de ter as dependências necessárias instaladas antes de compilar e executar os jogos. Que nesse caso é somente  o gtk. 
 
-Qualquer duvída estou a disposição !!
+Qualquer dúvida estou a disposição !!
 
 
 

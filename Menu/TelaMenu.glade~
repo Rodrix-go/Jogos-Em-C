@@ -76,7 +76,6 @@
             <attributes>
               <attribute name="font-desc" value="Source Code Pro Bold 25"/>
               <attribute name="style" value="normal"/>
-              <attribute name="foreground" value="#3d3d3b3b4040"/>
             </attributes>
           </object>
           <packing>
