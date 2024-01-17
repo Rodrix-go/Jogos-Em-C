@@ -13,7 +13,8 @@ void move(char direcao);
 int ehdirecao(char direcao);
 void fantasmas();
 void explodepilula();
-void explodepilula2(int x, int y, int somax, int somay, int qtd);
+void explodepilula2(int x, int y, int somax, int somay, int qtd, char efeito);
+void mapa_pos_explosao();
 void jogo_foge();
 
 #endif

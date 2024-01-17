@@ -1,24 +1,17 @@
-/* Defina a cor de fundo e a cor do texto para o botão normal */
 button {
-    background-color: rgb(160, 117, 69);
-    /* Verde */
-    color: rgb(255, 0, 0);
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
+    border-radius: 20%;
+    border-width: 1px;
+    border-color: #393E46;
+    transition-duration: 400ms;
 }
 
-/* Altere a cor de fundo quando o botão for pressionado */
-button:active {
-    background-color: rgb(160, 117, 69);
-}
-
-/* Altere a cor de fundo quando o mouse estiver sobre o botão */
 button:hover {
-    background-color: #45a049;
+    background-color: #00ADB5;
+    color: #EEEEEE;
+}
+
+
+
+label {
+    color: #222831;
 }

@@ -89,7 +89,6 @@ void chuta(char letra)
 {
   chutes[chutesdados] = letra;
   chutesdados++;
-  g_print("Letra inserida: %c\n", letra);
 }
 
 int chuteserrados()
@@ -129,7 +128,6 @@ void escolhetema()
   {
     fscanf(f, "%s", tema);
   }
-  printf("Tema escolhido: %s\n", tema);
   fclose(f);
 }
 
@@ -158,7 +156,6 @@ void escolhepalavra()
     fscanf(f, "%s", palavrasecreta);
   }
   fclose(f);
-  g_print("Palavra correta: %s\n", palavrasecreta);
 }
 
 void adcionapalavra()

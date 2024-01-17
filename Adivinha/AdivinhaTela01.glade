@@ -12,10 +12,11 @@
         <property name="visible">True</property>
         <property name="app-paintable">True</property>
         <property name="can-focus">False</property>
+        <property name="margin-bottom">50</property>
         <child>
           <object class="GtkButton" id="button_easy">
             <property name="label" translatable="yes">Fácil</property>
-            <property name="width-request">100</property>
+            <property name="width-request">120</property>
             <property name="height-request">84</property>
             <property name="visible">True</property>
             <property name="can-focus">True</property>
@@ -30,7 +31,7 @@
         <child>
           <object class="GtkButton" id="button_medium">
             <property name="label" translatable="yes">Médio</property>
-            <property name="width-request">100</property>
+            <property name="width-request">120</property>
             <property name="height-request">80</property>
             <property name="visible">True</property>
             <property name="can-focus">True</property>
@@ -45,7 +46,7 @@
         <child>
           <object class="GtkButton" id="button_hard">
             <property name="label" translatable="yes">Difícil</property>
-            <property name="width-request">100</property>
+            <property name="width-request">120</property>
             <property name="height-request">80</property>
             <property name="visible">True</property>
             <property name="can-focus">True</property>

@@ -1,6 +1,5 @@
 #include "JogoForcaGUI.h"
 #include "jogoForca.h"
-#include "gtk/gtk.h"
 
 #include <stdlib.h>
 #include <sys/types.h>
@@ -109,7 +108,6 @@ int forcaWindow01(int argc, char *argv[])
     strcat(text_tmp, "_ ");
   }
 
-  g_print("Espaçamentos: %s\n", text_tmp);
   gtk_label_set_text(GTK_LABEL(forca_text_string), (const gchar *)text_tmp);
 
   gtk_widget_show(forca_window01);
@@ -128,8 +126,6 @@ void desenhaforca()
   sprintf(str_tmp, "Forca/img/%d.gif", erros + 1);
   gtk_image_set_from_file(GTK_IMAGE(forca_image01), str_tmp);
 
-  // printf("Você já deu %d chutes\n", chutesdados);
-
   sprintf(str_tmp, " ");
 
   for (int i = 0; i < strlen(palavrasecreta); i++)
@@ -146,9 +142,7 @@ void desenhaforca()
       strcat(str_tmp, "_ ");
     }
   }
-  g_print("\nFrase: %s\n", str_tmp);
   gtk_label_set_text(GTK_LABEL(forca_text_string), (const gchar *)str_tmp);
-  printf("\n");
 
   if ((ganhou()) || (enforcou()))
   {
@@ -188,7 +182,7 @@ int forcaWindow02(int argc, char *argv[], int resultado)
 
   char texto_edit[10];
   if (resultado)
-    sprintf(texto_edit, "Parabéns você ganhou !!\nO número secreto era:%s", palavrasecreta);
+    sprintf(texto_edit, "Parabéns você ganhou !!\nO número secreto era: %s", palavrasecreta);
   else
     sprintf(texto_edit, "Infelizmente você perdeu\nA palavra secreta era: %s", palavrasecreta);
 

@@ -11,7 +11,7 @@
 #include <ctype.h>
 #include "../Adivinha/jogoadivin.h"
 #include "../Forca/jogoForca.h"
-#include "../Foge/fogefoge.h"
+#include "../Foge/ui.h"
 #include "../Forca/JogoForcaGUI.h"
 
 /*
@@ -23,12 +23,25 @@
 
 GtkWidget *window;
 GtkWidget *fixed1;
-GtkWidget *button_advin;
 GtkWidget *button_forca;
+GtkWidget *button_adivinha;
 GtkWidget *button_pega;
 GtkWidget *button;
 GtkWidget *text1;
 GtkBuilder *builder;
+
+void add_estilo(char *caminho, GtkWidget *component)
+{
+  // Obtém o estilo do botão
+  GtkStyleContext *context = gtk_widget_get_style_context(component);
+
+  // Carrega o arquivo CSS
+  GtkCssProvider *cssProvider = gtk_css_provider_new();
+  gtk_css_provider_load_from_path(cssProvider, caminho, NULL);
+
+  // Adiciona o provedor de estilo ao contexto do botão
+  gtk_style_context_add_provider(context, GTK_STYLE_PROVIDER(cssProvider), GTK_STYLE_PROVIDER_PRIORITY_USER);
+}
 
 int main(int argc, char *argv[])
 {
@@ -38,27 +51,21 @@ int main(int argc, char *argv[])
   builder = gtk_builder_new_from_file("Menu/TelaMenu.glade");
 
   window = GTK_WIDGET(gtk_builder_get_object(builder, "window"));
-
   g_signal_connect(window, "destroy", G_CALLBACK(gtk_main_quit), NULL);
 
   gtk_builder_connect_signals(builder, NULL);
 
   fixed1 = GTK_WIDGET(gtk_builder_get_object(builder, "fixed1"));
-  button_advin = GTK_WIDGET(gtk_builder_get_object(builder, "button_advin"));
   button = GTK_WIDGET(gtk_builder_get_object(builder, "button"));
+  text1 = GTK_WIDGET(gtk_builder_get_object(builder, "text1"));
   button_forca = GTK_WIDGET(gtk_builder_get_object(builder, "button_forca"));
   button_pega = GTK_WIDGET(gtk_builder_get_object(builder, "button_pega"));
-  text1 = GTK_WIDGET(gtk_builder_get_object(builder, "text1"));
+  button_adivinha = GTK_WIDGET(gtk_builder_get_object(builder, "button_adivinha"));
 
-  // Obtém o estilo do botão
-  GtkStyleContext *context = gtk_widget_get_style_context(button);
-
-  // Carrega o arquivo CSS
-  GtkCssProvider *cssProvider = gtk_css_provider_new();
-  gtk_css_provider_load_from_path(cssProvider, "Menu/estilo.css", NULL);
-
-  // Adiciona o provedor de estilo ao contexto do botão
-  gtk_style_context_add_provider(context, GTK_STYLE_PROVIDER(cssProvider), GTK_STYLE_PROVIDER_PRIORITY_USER);
+  add_estilo("Menu/estilo.css", text1);
+  add_estilo("Menu/estilo.css", button_adivinha);
+  add_estilo("Menu/estilo.css", button_forca);
+  add_estilo("Menu/estilo.css", button_pega);
 
   gtk_widget_show(window);
 
@@ -67,7 +74,7 @@ int main(int argc, char *argv[])
   return EXIT_SUCCESS;
 }
 
-void on_button_adivin_clicked(GtkButton *b, gpointer user_data)
+void on_button_adivinha_clicked(GtkButton *b, gpointer user_data)
 {
   // Destruir a janela principal
   gtk_widget_destroy(window);
@@ -83,5 +90,6 @@ void on_button_forca_clicked(GtkButton *b, gpointer user_data)
 
 void on_button_pega_clicked(GtkButton *b)
 {
-  jogo_foge();
+  gtk_widget_destroy(window);
+  FogeWindow1(0, 0);
 }

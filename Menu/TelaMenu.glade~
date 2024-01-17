@@ -3,21 +3,33 @@
 <interface>
   <requires lib="gtk+" version="3.24"/>
   <object class="GtkWindow" id="window">
+    <property name="name">window</property>
+    <property name="width-request">100</property>
+    <property name="height-request">100</property>
     <property name="can-focus">False</property>
     <property name="title" translatable="yes">Menu</property>
+    <property name="resizable">False</property>
+    <property name="window-position">center</property>
+    <property name="gravity">static</property>
     <child>
       <object class="GtkFixed" id="fixed1">
+        <property name="width-request">-1</property>
+        <property name="height-request">-1</property>
         <property name="visible">True</property>
         <property name="can-focus">False</property>
+        <property name="margin-start">50</property>
+        <property name="margin-end">50</property>
+        <property name="margin-top">50</property>
+        <property name="margin-bottom">50</property>
         <child>
-          <object class="GtkButton" id="button_adivin">
-            <property name="label" translatable="yes">Adivinhação</property>
-            <property name="width-request">100</property>
-            <property name="height-request">84</property>
+          <object class="GtkButton" id="button_adivinha">
+            <property name="label" translatable="yes">Adivinha</property>
+            <property name="width-request">120</property>
+            <property name="height-request">80</property>
             <property name="visible">True</property>
-            <property name="can-focus">True</property>
+            <property name="can-focus">False</property>
             <property name="receives-default">True</property>
-            <signal name="clicked" handler="on_button_adivin_clicked" swapped="no"/>
+            <signal name="clicked" handler="on_button_adivinha_clicked" swapped="no"/>
           </object>
           <packing>
             <property name="x">65</property>
@@ -27,10 +39,10 @@
         <child>
           <object class="GtkButton" id="button_forca">
             <property name="label" translatable="yes">Forca</property>
-            <property name="width-request">100</property>
+            <property name="width-request">120</property>
             <property name="height-request">80</property>
             <property name="visible">True</property>
-            <property name="can-focus">True</property>
+            <property name="can-focus">False</property>
             <property name="receives-default">True</property>
             <signal name="clicked" handler="on_button_forca_clicked" swapped="no"/>
           </object>
@@ -42,10 +54,10 @@
         <child>
           <object class="GtkButton" id="button_pega">
             <property name="label" translatable="yes">Pega-Pega</property>
-            <property name="width-request">100</property>
+            <property name="width-request">120</property>
             <property name="height-request">80</property>
             <property name="visible">True</property>
-            <property name="can-focus">True</property>
+            <property name="can-focus">False</property>
             <property name="receives-default">True</property>
             <signal name="clicked" handler="on_button_pega_clicked" swapped="no"/>
           </object>
@@ -62,8 +74,9 @@
             <property name="can-focus">False</property>
             <property name="label" translatable="yes">Qual jogo você deseja jogar ?</property>
             <attributes>
-              <attribute name="font-desc" value="Sans Bold 34"/>
-              <attribute name="foreground" value="#1a1a5f5fb4b4"/>
+              <attribute name="font-desc" value="Source Code Pro Bold 25"/>
+              <attribute name="style" value="normal"/>
+              <attribute name="foreground" value="#3d3d3b3b4040"/>
             </attributes>
           </object>
           <packing>

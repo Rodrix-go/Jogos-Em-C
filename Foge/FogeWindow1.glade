@@ -1,0 +1,828 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.40.0 -->
+<interface>
+  <requires lib="gtk+" version="3.24"/>
+  <object class="GtkWindow" id="foge_window1">
+    <property name="can-focus">False</property>
+    <property name="title" translatable="yes">Jogo Foge-Foge</property>
+    <child>
+      <!-- n-columns=3 n-rows=3 -->
+      <object class="GtkGrid" id="foge_box1">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <child>
+          <!-- n-columns=10 n-rows=6 -->
+          <object class="GtkGrid" id="foge_grid1">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="margin-left">50</property>
+            <property name="margin-right">50</property>
+            <property name="margin-start">50</property>
+            <property name="margin-end">15</property>
+            <property name="margin-top">50</property>
+            <property name="margin-bottom">20</property>
+            <property name="column-homogeneous">True</property>
+            <child>
+              <object class="GtkImage" id="foge_image0x0">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/parede.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">0</property>
+                <property name="top-attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image0x1">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/parede.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">0</property>
+                <property name="top-attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image0x2">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/parede.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">0</property>
+                <property name="top-attach">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image0x3">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/parede.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">0</property>
+                <property name="top-attach">3</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image0x4">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/parede.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">0</property>
+                <property name="top-attach">4</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image0x5">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/parede.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">0</property>
+                <property name="top-attach">5</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image1x0">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/parede.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">1</property>
+                <property name="top-attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image1x1">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/parede.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">1</property>
+                <property name="top-attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image1x2">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/parede.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">1</property>
+                <property name="top-attach">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image1x3">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/parede.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">1</property>
+                <property name="top-attach">3</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image1x4">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/parede.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">1</property>
+                <property name="top-attach">4</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image1x5">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/parede.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">1</property>
+                <property name="top-attach">5</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image2x0">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/parede.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">2</property>
+                <property name="top-attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image2x1">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/parede.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">2</property>
+                <property name="top-attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image2x2">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/parede.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">2</property>
+                <property name="top-attach">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image2x3">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/parede.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">2</property>
+                <property name="top-attach">3</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image2x4">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/parede.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">2</property>
+                <property name="top-attach">4</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image2x5">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/parede.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">2</property>
+                <property name="top-attach">5</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image3x0">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/parede.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">3</property>
+                <property name="top-attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image3x1">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/parede.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">3</property>
+                <property name="top-attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image3x2">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/parede.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">3</property>
+                <property name="top-attach">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image3x3">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/parede.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">3</property>
+                <property name="top-attach">3</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image3x4">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/parede.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">3</property>
+                <property name="top-attach">4</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image3x5">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/parede.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">3</property>
+                <property name="top-attach">5</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image4x0">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/parede.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">4</property>
+                <property name="top-attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image4x1">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/parede.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">4</property>
+                <property name="top-attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image4x2">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/parede.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">4</property>
+                <property name="top-attach">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image4x3">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/parede.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">4</property>
+                <property name="top-attach">3</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image4x4">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/mapa.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">4</property>
+                <property name="top-attach">4</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image4x5">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/mapa.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">4</property>
+                <property name="top-attach">5</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image5x0">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/mapa.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">5</property>
+                <property name="top-attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image5x1">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/mapa.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">5</property>
+                <property name="top-attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image5x2">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/mapa.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">5</property>
+                <property name="top-attach">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image5x3">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/mapa.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">5</property>
+                <property name="top-attach">3</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image5x4">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/pac.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">5</property>
+                <property name="top-attach">4</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image5x5">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/mapa.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">5</property>
+                <property name="top-attach">5</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image6x0">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/mapa.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">6</property>
+                <property name="top-attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image6x1">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/mapa.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">6</property>
+                <property name="top-attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image6x2">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/mapa.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">6</property>
+                <property name="top-attach">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image6x3">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/mapa.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">6</property>
+                <property name="top-attach">3</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image6x4">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/mapa.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">6</property>
+                <property name="top-attach">4</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image6x5">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/mapa.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">6</property>
+                <property name="top-attach">5</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image7x0">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/mapa.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">7</property>
+                <property name="top-attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image7x1">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/mapa.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">7</property>
+                <property name="top-attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image7x2">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/mapa.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">7</property>
+                <property name="top-attach">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image7x3">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/mapa.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">7</property>
+                <property name="top-attach">3</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image7x4">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/mapa.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">7</property>
+                <property name="top-attach">4</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image7x5">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/mapa.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">7</property>
+                <property name="top-attach">5</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image8x0">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/mapa.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">8</property>
+                <property name="top-attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image8x1">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/mapa.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">8</property>
+                <property name="top-attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image8x2">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/mapa.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">8</property>
+                <property name="top-attach">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image8x3">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/mapa.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">8</property>
+                <property name="top-attach">3</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image8x4">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/mapa.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">8</property>
+                <property name="top-attach">4</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image8x5">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/mapa.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">8</property>
+                <property name="top-attach">5</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image9x0">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/mapa.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">9</property>
+                <property name="top-attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image9x1">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/monstro_1.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">9</property>
+                <property name="top-attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image9x2">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/mapa.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">9</property>
+                <property name="top-attach">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image9x3">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/mapa.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">9</property>
+                <property name="top-attach">3</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image9x4">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/mapa.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">9</property>
+                <property name="top-attach">4</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="foge_image9x5">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">imgs/fruta.png</property>
+              </object>
+              <packing>
+                <property name="left-attach">9</property>
+                <property name="top-attach">5</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="left-attach">1</property>
+            <property name="top-attach">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkFixed" id="foge_fixed1">
+            <property name="width-request">200</property>
+            <property name="height-request">460</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="margin-end">25</property>
+            <child>
+              <object class="GtkButton" id="foge_button_left">
+                <property name="label" translatable="yes">🠔</property>
+                <property name="width-request">50</property>
+                <property name="height-request">50</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="focus-on-click">False</property>
+                <property name="receives-default">True</property>
+                <signal name="clicked" handler="on_foge_button_left_clicked" swapped="no"/>
+              </object>
+              <packing>
+                <property name="x">10</property>
+                <property name="y">200</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="foge_button_right">
+                <property name="label" translatable="yes">➞</property>
+                <property name="width-request">50</property>
+                <property name="height-request">50</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="focus-on-click">False</property>
+                <property name="receives-default">True</property>
+                <signal name="clicked" handler="on_foge_button_right_clicked" swapped="no"/>
+              </object>
+              <packing>
+                <property name="x">120</property>
+                <property name="y">200</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="foge_button_up">
+                <property name="label" translatable="yes">🠕</property>
+                <property name="width-request">50</property>
+                <property name="height-request">50</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="focus-on-click">False</property>
+                <property name="receives-default">True</property>
+                <signal name="clicked" handler="on_foge_button_up_clicked" swapped="no"/>
+              </object>
+              <packing>
+                <property name="x">65</property>
+                <property name="y">145</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="foge_button_down">
+                <property name="label" translatable="yes">🠗</property>
+                <property name="width-request">50</property>
+                <property name="height-request">50</property>
+                <property name="visible">True</property>
+                <property name="app-paintable">True</property>
+                <property name="can-focus">True</property>
+                <property name="focus-on-click">False</property>
+                <property name="receives-default">True</property>
+                <property name="halign">baseline</property>
+                <property name="border-width">0</property>
+                <signal name="clicked" handler="on_foge_button_down_clicked" swapped="no"/>
+              </object>
+              <packing>
+                <property name="x">65</property>
+                <property name="y">255</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="foge_button_bomb">
+                <property name="label" translatable="yes">B</property>
+                <property name="width-request">50</property>
+                <property name="height-request">50</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="focus-on-click">False</property>
+                <property name="receives-default">True</property>
+                <signal name="clicked" handler="on_foge_button_bomb_clicked" swapped="no"/>
+              </object>
+              <packing>
+                <property name="x">65</property>
+                <property name="y">200</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="foge_text_power">
+                <property name="name">Poderes:</property>
+                <property name="width-request">128</property>
+                <property name="height-request">80</property>
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">Poderes:</property>
+                <attributes>
+                  <attribute name="font-desc" value="Source Code Pro Semi-Bold 20"/>
+                  <attribute name="foreground" value="#000000000000"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="y">332</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="left-attach">2</property>
+            <property name="top-attach">1</property>
+          </packing>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

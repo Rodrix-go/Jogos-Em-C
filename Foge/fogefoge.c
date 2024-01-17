@@ -5,18 +5,19 @@
 #include "mapa.h"
 #include "ui.h"
 
-MAPA m;
-POSICAO heroi;
-int tempilula = 0;
+extern MAPA m;
+extern POSICAO heroi;
+extern int tempilula;
 
 int acabou()
 {
 	POSICAO pos;
 
-	int perdeu = !encontramapa(&m, &pos, HEROI);
-	int ganhou = !encontramapa(&m, &pos, FANTASMA);
+	int resultado = 0;
+	resultado = (!encontramapa(&m, &pos, HEROI) ? 1 : 0);
+	resultado = (!encontramapa(&m, &pos, FANTASMA) ? 2 : 0);
 
-	return ganhou || perdeu;
+	return resultado;
 }
 
 int ehdirecao(char direcao)
@@ -54,7 +55,7 @@ void move(char direcao)
 
 	if (ehpersonagem(&m, PILULA, proximox, proximoy))
 	{
-		tempilula = 1;
+		tempilula++;
 	}
 
 	andanomapa(&m, heroi.x, heroi.y, proximox, proximoy);
@@ -117,7 +118,7 @@ void fantasmas()
 	liberamapa(&copia);
 }
 
-void explodepilula2(int x, int y, int somax, int somay, int qtd)
+void explodepilula2(int x, int y, int somax, int somay, int qtd, char efeito)
 {
 
 	if (qtd == 0)
@@ -131,8 +132,20 @@ void explodepilula2(int x, int y, int somax, int somay, int qtd)
 	if (ehparede(&m, novox, novoy))
 		return;
 
-	m.matriz[novox][novoy] = VAZIO;
-	explodepilula2(novox, novoy, somax, somay, qtd - 1);
+	m.matriz[novox][novoy] = efeito;
+	explodepilula2(novox, novoy, somax, somay, qtd - 1, efeito);
+}
+
+void delay(int seconds)
+{
+	int mili_seconds = 1000 * seconds;
+
+	clock_t start_time = clock();
+
+	while (clock() < start_time + mili_seconds)
+	{
+		printf("%d\n", clock());
+	};
 }
 
 void explodepilula()
@@ -140,17 +153,23 @@ void explodepilula()
 	if (!tempilula)
 		return;
 
-	explodepilula2(heroi.x, heroi.y, 0, 1, 3);
-	explodepilula2(heroi.x, heroi.y, 0, -1, 3);
-	explodepilula2(heroi.x, heroi.y, 1, 0, 3);
-	explodepilula2(heroi.x, heroi.y, -1, 0, 3);
+	explodepilula2(heroi.x, heroi.y, 0, 1, 3, EXPLOSAO);
+	explodepilula2(heroi.x, heroi.y, 0, -1, 3, EXPLOSAO);
+	explodepilula2(heroi.x, heroi.y, 1, 0, 3, EXPLOSAO);
+	explodepilula2(heroi.x, heroi.y, -1, 0, 3, EXPLOSAO);
+	tempilula--;
+}
 
-	tempilula = 0;
+void mapa_pos_explosao()
+{
+	explodepilula2(heroi.x, heroi.y, 0, 1, 3, VAZIO);
+	explodepilula2(heroi.x, heroi.y, 0, -1, 3, VAZIO);
+	explodepilula2(heroi.x, heroi.y, 1, 0, 3, VAZIO);
+	explodepilula2(heroi.x, heroi.y, -1, 0, 3, VAZIO);
 }
 
 void jogo_foge()
 {
-
 	lemapa(&m);
 	encontramapa(&m, &heroi, HEROI);
 
@@ -158,7 +177,6 @@ void jogo_foge()
 	{
 		printf("Pílula: %s\n", (tempilula ? "SIM" : "NÃO"));
 		imprimemapa(&m);
-
 		char comando;
 		scanf(" %c", &comando);
 
