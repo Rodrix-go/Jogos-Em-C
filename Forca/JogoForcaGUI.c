@@ -188,6 +188,11 @@ int forcaWindow02(int argc, char *argv[], int resultado)
 
   gtk_label_set_text(GTK_LABEL(forca_text_end), (const gchar *)texto_edit);
 
+  gtk_widget_set_name(forca_button_yes, "forca_button_yes");
+  gtk_widget_set_name(forca_button_no, "forca_button_no");
+  add_estilo("Forca/estilo_forca.css", forca_button_yes);
+  add_estilo("Forca/estilo_forca.css", forca_button_no);
+
   gtk_main();
   gtk_widget_destroy(forca_window02);
 
