@@ -1,6 +1,6 @@
 # Jogos em C
 
-Este projeto contém jogos desenvolvidos durante a formação em C oferecida pela empresa Alura. Para ir além, também foi implementada uma interface gráfica utilizando o toolkit GTK em conjunto com o Glade e um pouquinho de CSS.
+Este repositório contém jogos desenvolvidos durante a formação em C oferecida pela empresa Alura. Para ir além, também foi implementada uma interface gráfica utilizando o toolkit GTK em conjunto com o Glade e um pouquinho de CSS.
 
 Ao todo, o repositório inclui três jogos:
 
